@@ -1,0 +1,1 @@
+Hello everyone, in this file I will explain what is in our SwiftLearnStep repo and what it does. The purpose of this repo is to show Swift beginners the steps I followed. I am trying to reach a certain level by following the steps here in order. I am trying to do these practices by watching them first and then applying them myself. I hope it will be useful for you.
