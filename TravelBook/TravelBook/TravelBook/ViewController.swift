@@ -55,7 +55,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
             let idString = selectedTitleID!.uuidString
-            fetchRequest.predicate = NSPredicate(format: "id = @", idString)
+            fetchRequest.predicate = NSPredicate(format: "id = %@", idString)
             fetchRequest.returnsObjectsAsFaults = false
             
             do{
@@ -76,33 +76,27 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                                         annotation.subtitle = annotationSubtitle
                                         let coordinate = CLLocationCoordinate2D(latitude: annotationLatitude, longitude: annotationLongitude)
                                         annotation.coordinate = coordinate
-                                        
                                         mapView.addAnnotation(annotation)
                                         nameText.text = annotationTitle
                                         commentText.text = annotationSubtitle
-                                        
                                         locationManager.stopUpdatingLocation()
-                                        
                                         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
                                         let region = MKCoordinateRegion(center: coordinate, span: span)
                                         mapView.setRegion(region, animated: true)
+                                        
                                     }
                                 }
-                                
                             }
-                        }
+                        }                        }
                     }
+                }catch {
+                print("error")
+                }
+                    }
+                else{
+                    
                 }
             }
-            catch {
-                print("error")
-            }
-        }
-        else{
-            
-        }
-        
-    }
     
     @objc func chooseLocation(gestureRecognizer:UILongPressGestureRecognizer){
         
@@ -128,16 +122,53 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //Kendi lokasyonumuzu oluşturmak için kullanıyoruz.
-        let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
-        
-        //Harita da gösterilen genişlik ve yükseklik değeri yani bir nebze zoom seviyesi diyebiliriz.
-        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
-        
-        
-        let region = MKCoordinateRegion(center: location, span: span)
-        
-        mapView.setRegion(region, animated: true)
+        if selectedTitle == ""{
+            let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+            
+            //Harita da gösterilen genişlik ve yükseklik değeri yani bir nebze zoom seviyesi diyebiliriz.
+            let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+            
+            
+            let region = MKCoordinateRegion(center: location, span: span)
+            
+            mapView.setRegion(region, animated: true)
+        }
+        else{
+            
+        }
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+           
+        //Sadece tıklanan yeri göstermek için böyle bir kontrol yazdık.
+           if annotation is MKUserLocation {
+               return nil
+           }
+           
+           let reuseId = "myAnnotation"
+           var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKMarkerAnnotationView
+           
+           if pinView == nil {
+               pinView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+               //Baloncuğun içersinde ekstra bilgi göstermek için kullanılır.
+               pinView?.canShowCallout = true
+               //Baloncuk içerisinde ki ikonun rengini ayarlar.
+               pinView?.tintColor = UIColor.red
+               
+               //Baloncuk içerisinde ki butonun yapılandırması.
+               let button = UIButton(type: UIButton.ButtonType.detailDisclosure)
+               //Baloncuğun sağ tarafında gösterilmesini sağlar.
+               pinView?.rightCalloutAccessoryView = button
+               
+           } else {
+               pinView?.annotation = annotation
+           }
+           
+           
+           
+           return pinView
+       }
+       
 
     
     
@@ -160,6 +191,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }catch{
             print("Error")
         }
+        
+        NotificationCenter.default.post(name: NSNotification.Name("newPlace"), object: nil)
+        navigationController?.popViewController(animated: true)
     }
     
 }
