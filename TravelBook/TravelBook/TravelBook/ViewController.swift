@@ -10,23 +10,25 @@ import MapKit
 import CoreLocation
 import CoreData
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
     
-    
+    //Storyboard'da yer alan kullanıcı arabirim öğelerini kodda tanımladık ve IBOutlet olarak bağladık.
     @IBOutlet weak var nameText: UITextField!
-   
+    
     @IBOutlet weak var commentText: UITextField!
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var saveButton: UIButton!
+    
+    //Seçilen konumun koordinatlarını tutmak için atanan değişkenler.
     var chosenLatitude = Double()
     var chosenLongitude = Double()
     
+    //Konum yöneticisi ve diğer değişkenleri tanımladık.
     var locationManager = CLLocationManager()
-    
     var selectedTitle = ""
     var selectedTitleID: UUID?
-    
     var annotationTitle = ""
     var annotationSubtitle = ""
     var annotationLatitude = Double()
@@ -35,7 +37,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Delegate'leri ve delegeleri ayarladık
+        nameText.delegate = self
+        commentText.delegate = self
         mapView.delegate = self
+        
         locationManager.delegate = self
         //En iyi ve en doğru konumu almak için kullanılır.
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -44,12 +50,23 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         //Kullanıcının yerini almaya başlıyoruz.
         locationManager.startUpdatingLocation()
         
+        
         //GestureRecognizer ekledik ve fonksiyonunu tanımladık.
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(chooseLocation(gestureRecognizer:)))
-        gestureRecognizer.minimumPressDuration = 3
         mapView.addGestureRecognizer(gestureRecognizer)
-        
+        gestureRecognizer.minimumPressDuration = 2
+
+        //Klavyenin dokunma olaylarını kontrol ediyor.
+        let gestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        mapView.addGestureRecognizer(gestureRecognizer2)
+
+        //Eğer bir konum seçildiyse veritabanından detaylarını alıp haritaya ve metin alanlarına ekledik.
         if selectedTitle != ""{
+            
+            saveButton.isHidden = true
+            
+            //Core Data
+            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             
@@ -88,15 +105,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                                 }
                             }
                         }                        }
-                    }
-                }catch {
+                }
+            }catch {
                 print("error")
-                }
-                    }
-                else{
-                    
-                }
             }
+        }
+        else{
+            saveButton.isHidden = false
+            saveButton.isEnabled = false
+            nameText.text = ""
+            commentText.text = ""
+        }
+    }
     
     @objc func chooseLocation(gestureRecognizer:UILongPressGestureRecognizer){
         
@@ -138,8 +158,24 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
     
+    @objc func hideKeyboard(){
+        func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+
+    }
+    
+    //Save butonunun durumunu kontrol eden fonksiyon. Eğer Field'lar boş işe aktif edilmeyecektir.
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let nameIsEmpty = nameText.text?.isEmpty ?? true
+        let commentIsEmpty = commentText.text?.isEmpty ?? true
+        
+        saveButton.isEnabled = !(nameIsEmpty || commentIsEmpty)
+    }
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-           
+        
         //Sadece tıklanan yeri göstermek için böyle bir kontrol yazdık.
            if annotation is MKUserLocation {
                return nil
@@ -168,12 +204,38 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
            
            return pinView
        }
-       
+    
+    
+    //Bu fonksiyonun amacı oraya tıklandığını anlamak.
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            if selectedTitle != "" {
+                
+                //Koordinatlar ve yerler arasında bağlantı kurmamızı sağlayan sınıf.
+                let requestLocation = CLLocation(latitude: annotationLatitude, longitude: annotationLongitude)
+                
+                //Navigasyonu çalıştırmak için gerekli olan objeyi almak için kullanılır.
+                CLGeocoder().reverseGeocodeLocation(requestLocation) { (placemarks, error) in
+                    //closure
+                    
+                    if let placemark = placemarks {
+                        if placemark.count > 0 {
+                                          
+                            let newPlacemark = MKPlacemark(placemark: placemark[0])
+                            let item = MKMapItem(placemark: newPlacemark)
+                            item.name = self.annotationTitle
+                            //Navigasyonu hangi araç ile (yürüyerek, araba ile vs) kullanacağımızı ayarlıyoruz.
+                            let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+                            //Haritayi açıp navigasyonu aktif edebiliriz artık
+                            item.openInMaps(launchOptions: launchOptions)
+                                          
+                    }
+                }
+            }
+        }
+    }
 
-    
-    
-    @IBAction func saveButton(_ sender: Any) {
-        
+
+    @IBAction func saveButtons(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -195,6 +257,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         NotificationCenter.default.post(name: NSNotification.Name("newPlace"), object: nil)
         navigationController?.popViewController(animated: true)
     }
+    
+    
+    
     
 }
 

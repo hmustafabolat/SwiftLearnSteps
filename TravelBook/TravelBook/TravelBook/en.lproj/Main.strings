@@ -1,0 +1,12 @@
+
+/* Class = "UITextField"; placeholder = "Comment"; ObjectID = "gLM-Xi-mRo"; */
+"gLM-Xi-mRo.placeholder" = "Comment";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "jLh-Eg-mVb"; */
+"jLh-Eg-mVb.placeholder" = "Name";
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "tq0-g2-s9B"; */
+"tq0-g2-s9B.configuration.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "tq0-g2-s9B"; */
+"tq0-g2-s9B.normalTitle" = "Button";
