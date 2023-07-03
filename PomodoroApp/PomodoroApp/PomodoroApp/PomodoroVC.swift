@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PomodoroVC: UIViewController {
     
     
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeLabelBorder: UIView!
@@ -18,7 +19,8 @@ class PomodoroVC: UIViewController {
     
     var timer = Timer()
     var isTimerStarted = false
-    var time = 1500
+    var time = 5
+    var audioPlayer : AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,10 @@ class PomodoroVC: UIViewController {
         
         if !isTimerStarted || sender.currentImage == UIImage(named: "play"){
             sender.setImage(UIImage(named: "pause"), for: .normal)
+            if time == 0{
+                time = 5
+                timeLabel.text = formatTime()
+            }
             startTimer()
             isTimerStarted = true
             
@@ -43,16 +49,20 @@ class PomodoroVC: UIViewController {
             timer.invalidate()
             isTimerStarted = false
             sender.setImage(UIImage(named: "play"), for: .normal)
+            
         }
     }
     
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        cancelButton.isEnabled = true
-        cancelButton.alpha = 0.5
+    @IBAction func restartButtonTapped(_ sender: Any) {
+        
+        restartButton.isEnabled = true
+        restartButton.alpha = 1.0
         timer.invalidate()
-        time = 1500
+        time = 5
         isTimerStarted = false
-        timeLabel.text = "25:00"
+        timeLabel.text = "00:05"
+        //Restart butonuna tıklandığında "pause" butonunu "play" olarak değiştirir.
+        startButton.setImage(UIImage(named: "play"), for: .normal)
     }
     
     func startTimer(){
@@ -60,8 +70,19 @@ class PomodoroVC: UIViewController {
     }
     
     @objc func updateTimer(){
-        time -= 1
-        timeLabel.text = formatTime()
+        if time > 0 {
+            time -= 1
+            timeLabel.text = formatTime()
+        }
+        
+        if time == 0{
+            
+            timer.invalidate()
+            isTimerStarted = false
+            startButton.setImage(UIImage(named: "play"), for: .normal)
+            playNotificationSound()
+            
+        }
         
     }
     
@@ -69,6 +90,18 @@ class PomodoroVC: UIViewController {
         let minutes = Int(time) / 60 % 60
                let seconds = Int(time) % 60
                return String(format:"%02i:%02i", minutes, seconds)
+    }
+    
+    func playNotificationSound(){
+        guard let url = Bundle.main.url(forResource: "ping", withExtension: "mp3") else{
+            return
+        }
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }catch{
+            print("Error")
+        }
     }
     
     

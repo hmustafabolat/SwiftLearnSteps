@@ -147,7 +147,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             
             //Harita da gösterilen genişlik ve yükseklik değeri yani bir nebze zoom seviyesi diyebiliriz.
             let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
-            
+                
             
             let region = MKCoordinateRegion(center: location, span: span)
             
