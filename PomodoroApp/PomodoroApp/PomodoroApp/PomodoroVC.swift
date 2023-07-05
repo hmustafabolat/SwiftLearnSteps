@@ -93,16 +93,18 @@ class PomodoroVC: UIViewController {
     }
     
     func playNotificationSound(){
-        guard let url = Bundle.main.url(forResource: "ping", withExtension: "mp3") else{
-            return
-        }
-        do{
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
-        }catch{
-            print("Error")
-        }
-    }
+        guard let url = Bundle.main.url(forResource: "ping", withExtension: "mp3") else {
+                   return
+               }
+
+               do {
+                   audioPlayer = try AVAudioPlayer(contentsOf: url)
+                   audioPlayer?.prepareToPlay()
+                   audioPlayer?.play()
+               } catch {
+                   print("Error: \(error.localizedDescription)")
+               }
+           }
     
     
 }

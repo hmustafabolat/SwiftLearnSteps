@@ -1,9 +1,9 @@
 {
-  "data" : [
+  "images" : [
     {
-      "filename" : "ping.mp3",
       "idiom" : "universal",
-      "universal-type-identifier" : "public.mp3"
+      "platform" : "ios",
+      "size" : "1024x1024"
     }
   ],
   "info" : {
