@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nR5-nh-dWz">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,23 +13,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PomodoroApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree1" translatesAutoresizingMaskIntoConstraints="NO" id="W8q-r5-mbP">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="684"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmd-bw-hYf">
-                                <rect key="frame" x="15" y="497" width="363" height="302"/>
+                                <rect key="frame" x="15" y="497" width="345" height="262"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Focusing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfI-oE-A4f">
-                                        <rect key="frame" x="49" y="43" width="262" height="57"/>
+                                        <rect key="frame" x="49" y="43" width="244" height="57"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                         <color key="textColor" systemColor="systemGray5Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan your day, stay productive and reach your goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5s-dl-0Bt">
-                                        <rect key="frame" x="41" y="108" width="289" height="32"/>
+                                        <rect key="frame" x="41" y="108" width="271" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="cyS-lO-cgf"/>
                                         </constraints>
@@ -38,7 +38,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBQ-vx-Ueh">
-                                        <rect key="frame" x="149" y="188" width="50" height="50"/>
+                                        <rect key="frame" x="149" y="188" width="32" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="mZN-jx-vpA"/>
                                         </constraints>
@@ -70,10 +70,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQc-At-ZED">
-                                <rect key="frame" x="76" y="144" width="241" height="128"/>
+                                <rect key="frame" x="76" y="135" width="223" height="97"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PMDR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whE-LH-MzG">
-                                        <rect key="frame" x="50" y="37" width="141" height="54"/>
+                                        <rect key="frame" x="50" y="37" width="123" height="23"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                         <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                         <nil key="highlightedColor"/>
@@ -120,28 +120,36 @@
             <objects>
                 <viewController id="S0J-65-Q3N" customClass="PomodoroVC" customModule="PomodoroApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LTD-pq-v6M">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree2" translatesAutoresizingMaskIntoConstraints="NO" id="2Wi-GM-Fzn">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="684"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5la-Dn-9b1">
-                                <rect key="frame" x="56" y="173" width="281" height="158"/>
+                                <rect key="frame" x="56" y="164" width="263" height="127"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-MS-lNk">
-                                        <rect key="frame" x="32" y="15" width="217" height="129"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-MS-lNk">
+                                        <rect key="frame" x="32" y="15" width="199" height="97"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="50"/>
                                         <color key="textColor" systemColor="systemBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="zrX-MS-lNk" firstAttribute="top" secondItem="5la-Dn-9b1" secondAttribute="top" constant="15" id="0fg-ka-oWf"/>
+                                    <constraint firstItem="zrX-MS-lNk" firstAttribute="leading" secondItem="5la-Dn-9b1" secondAttribute="leading" constant="32" id="4ef-jH-4Z7"/>
+                                    <constraint firstItem="zrX-MS-lNk" firstAttribute="centerY" secondItem="5la-Dn-9b1" secondAttribute="centerY" id="5yB-rR-MoJ"/>
+                                    <constraint firstItem="zrX-MS-lNk" firstAttribute="centerX" secondItem="5la-Dn-9b1" secondAttribute="centerX" id="Tn2-cP-lXn"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIf-XY-YOe">
-                                <rect key="frame" x="56" y="640" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIf-XY-YOe">
+                                <rect key="frame" x="56" y="600" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="5tC-dG-smq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="pid-0r-MCy"/>
+                                </constraints>
                                 <color key="tintColor" red="1" green="0.99247757839999995" blue="0.96341530949999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="reset">
@@ -151,9 +159,11 @@
                                     <action selector="restartButtonTapped:" destination="S0J-65-Q3N" eventType="touchUpInside" id="XAF-rK-wD7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fo-VM-kr3">
-                                <rect key="frame" x="267" y="640" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fo-VM-kr3">
+                                <rect key="frame" x="281" y="600" width="56" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="ieB-B9-PwL"/>
+                                </constraints>
                                 <color key="tintColor" red="1" green="0.99247757835189299" blue="0.96341530948263354" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="play">
@@ -168,13 +178,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5la-Dn-9b1" firstAttribute="top" secondItem="fSQ-T6-odR" secondAttribute="top" constant="70" id="0bD-NC-YjN"/>
+                            <constraint firstItem="7fo-VM-kr3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5la-Dn-9b1" secondAttribute="trailing" id="0dV-kU-9Ud"/>
                             <constraint firstItem="fSQ-T6-odR" firstAttribute="bottom" secondItem="5la-Dn-9b1" secondAttribute="bottom" constant="487" id="1nB-MA-IE7"/>
+                            <constraint firstItem="7fo-VM-kr3" firstAttribute="leading" secondItem="uIf-XY-YOe" secondAttribute="trailing" constant="155" id="4FQ-TS-Dak"/>
+                            <constraint firstItem="uIf-XY-YOe" firstAttribute="firstBaseline" secondItem="7fo-VM-kr3" secondAttribute="firstBaseline" id="4fF-Ct-LqM"/>
                             <constraint firstItem="fSQ-T6-odR" firstAttribute="trailing" secondItem="2Wi-GM-Fzn" secondAttribute="trailing" id="7hZ-iY-rqH"/>
                             <constraint firstItem="2Wi-GM-Fzn" firstAttribute="leading" secondItem="fSQ-T6-odR" secondAttribute="leading" id="CNH-bB-rtW"/>
                             <constraint firstItem="2Wi-GM-Fzn" firstAttribute="top" secondItem="fSQ-T6-odR" secondAttribute="top" id="MNA-dx-gl1"/>
                             <constraint firstItem="5la-Dn-9b1" firstAttribute="leading" secondItem="fSQ-T6-odR" secondAttribute="leading" constant="56" id="U8s-1h-LP3"/>
                             <constraint firstItem="fSQ-T6-odR" firstAttribute="bottom" secondItem="2Wi-GM-Fzn" secondAttribute="bottom" id="hFx-7x-Lue"/>
+                            <constraint firstItem="uIf-XY-YOe" firstAttribute="baseline" secondItem="7fo-VM-kr3" secondAttribute="baseline" id="hGj-WW-3GI"/>
+                            <constraint firstItem="uIf-XY-YOe" firstAttribute="leading" secondItem="5la-Dn-9b1" secondAttribute="leading" id="lER-sv-fhO"/>
                             <constraint firstItem="5la-Dn-9b1" firstAttribute="centerX" secondItem="2Wi-GM-Fzn" secondAttribute="centerX" id="q52-wA-wcW"/>
+                            <constraint firstItem="fSQ-T6-odR" firstAttribute="bottom" secondItem="uIf-XY-YOe" secondAttribute="bottom" constant="108" id="z1c-10-gz3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6lD-hF-KN5"/>
@@ -195,7 +211,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nR5-nh-dWz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HFF-cy-qwq">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
