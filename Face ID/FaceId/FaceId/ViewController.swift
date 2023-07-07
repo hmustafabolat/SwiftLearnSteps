@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         let authContext = LAContext()
         
         var error: NSError?
-        
+        //Yüz tanıma veya parmak izi işlemlerini gerçekleştiren kodlar.
         if authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error){
             authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Is it you?") {
                 (succes,error) in
