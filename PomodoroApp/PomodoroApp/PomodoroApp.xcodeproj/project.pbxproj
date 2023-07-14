@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF19CCAF2A61FB9500D0A6CB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19CCAE2A61FB9500D0A6CB /* NotificationService.swift */; };
+		CF19CCB32A61FB9500D0A6CB /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CF19CCAC2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CF19CCBA2A61FDE800D0A6CB /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = CF19CCB92A61FDE800D0A6CB /* OneSignal */; };
 		CF1D35EF2A44392400EFA964 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1D35EE2A44392400EFA964 /* AppDelegate.swift */; };
 		CF1D35F12A44392400EFA964 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1D35F02A44392400EFA964 /* SceneDelegate.swift */; };
 		CF1D35F32A44392400EFA964 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1D35F22A44392400EFA964 /* ViewController.swift */; };
@@ -16,7 +19,41 @@
 		CF1D36052A44630000EFA964 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1D36042A44630000EFA964 /* PomodoroVC.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CF19CCB12A61FB9500D0A6CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF1D35E32A44392400EFA964 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF19CCAB2A61FB9500D0A6CB;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+		CF19CCBE2A61FF0A00D0A6CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF1D35E32A44392400EFA964 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF19CCAB2A61FB9500D0A6CB;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF19CCB42A61FB9500D0A6CB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CF19CCB32A61FB9500D0A6CB /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CF19CCAC2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF19CCAE2A61FB9500D0A6CB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		CF19CCB02A61FB9500D0A6CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF1D35EB2A44392400EFA964 /* PomodoroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF1D35EE2A44392400EFA964 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF1D35F02A44392400EFA964 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,24 +63,51 @@
 		CF1D35FA2A44392500EFA964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF1D35FC2A44392500EFA964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF1D36042A44630000EFA964 /* PomodoroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
+		CFBE2A082A620777009F629A /* PomodoroApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CF1D35E82A44392400EFA964 /* Frameworks */ = {
+		CF19CCA92A61FB9500D0A6CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF1D35E82A44392400EFA964 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF19CCBA2A61FDE800D0A6CB /* OneSignal in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF19CCAD2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CF19CCAE2A61FB9500D0A6CB /* NotificationService.swift */,
+				CF19CCB02A61FB9500D0A6CB /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		CF19CCBD2A61FF0A00D0A6CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF1D35E22A44392400EFA964 = {
 			isa = PBXGroup;
 			children = (
 				CF1D35ED2A44392400EFA964 /* PomodoroApp */,
+				CF19CCAD2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension */,
 				CF1D35EC2A44392400EFA964 /* Products */,
+				CF19CCBD2A61FF0A00D0A6CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				CF1D35EB2A44392400EFA964 /* PomodoroApp.app */,
+				CF19CCAC2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +123,7 @@
 		CF1D35ED2A44392400EFA964 /* PomodoroApp */ = {
 			isa = PBXGroup;
 			children = (
+				CFBE2A082A620777009F629A /* PomodoroApp.entitlements */,
 				CF1D35EE2A44392400EFA964 /* AppDelegate.swift */,
 				CF1D35F02A44392400EFA964 /* SceneDelegate.swift */,
 				CF1D35F22A44392400EFA964 /* ViewController.swift */,
@@ -73,6 +139,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CF19CCAB2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF19CCB72A61FB9500D0A6CB /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				CF19CCA82A61FB9500D0A6CB /* Sources */,
+				CF19CCA92A61FB9500D0A6CB /* Frameworks */,
+				CF19CCAA2A61FB9500D0A6CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			packageProductDependencies = (
+			);
+			productName = OneSignalNotificationServiceExtension;
+			productReference = CF19CCAC2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CF1D35EA2A44392400EFA964 /* PomodoroApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF1D35FF2A44392500EFA964 /* Build configuration list for PBXNativeTarget "PomodoroApp" */;
@@ -80,12 +165,18 @@
 				CF1D35E72A44392400EFA964 /* Sources */,
 				CF1D35E82A44392400EFA964 /* Frameworks */,
 				CF1D35E92A44392400EFA964 /* Resources */,
+				CF19CCB42A61FB9500D0A6CB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CF19CCB22A61FB9500D0A6CB /* PBXTargetDependency */,
+				CF19CCBF2A61FF0A00D0A6CB /* PBXTargetDependency */,
 			);
 			name = PomodoroApp;
+			packageProductDependencies = (
+				CF19CCB92A61FDE800D0A6CB /* OneSignal */,
+			);
 			productName = PomodoroApp;
 			productReference = CF1D35EB2A44392400EFA964 /* PomodoroApp.app */;
 			productType = "com.apple.product-type.application";
@@ -100,6 +191,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					CF19CCAB2A61FB9500D0A6CB = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 					CF1D35EA2A44392400EFA964 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -114,16 +208,27 @@
 				Base,
 			);
 			mainGroup = CF1D35E22A44392400EFA964;
+			packageReferences = (
+				CF19CCB82A61FDE800D0A6CB /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+			);
 			productRefGroup = CF1D35EC2A44392400EFA964 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				CF1D35EA2A44392400EFA964 /* PomodoroApp */,
+				CF19CCAB2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CF19CCAA2A61FB9500D0A6CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF1D35E92A44392400EFA964 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,6 +242,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CF19CCA82A61FB9500D0A6CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF19CCAF2A61FB9500D0A6CB /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF1D35E72A44392400EFA964 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,6 +262,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF19CCB22A61FB9500D0A6CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF19CCAB2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension */;
+			targetProxy = CF19CCB12A61FB9500D0A6CB /* PBXContainerItemProxy */;
+		};
+		CF19CCBF2A61FF0A00D0A6CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF19CCAB2A61FB9500D0A6CB /* OneSignalNotificationServiceExtension */;
+			targetProxy = CF19CCBE2A61FF0A00D0A6CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CF1D35F42A44392400EFA964 /* Main.storyboard */ = {
@@ -170,6 +296,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CF19CCB52A61FB9500D0A6CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZN854MBPY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mstfblt806.MySecondApp.PomodoroApp.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF19CCB62A61FB9500D0A6CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZN854MBPY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mstfblt806.MySecondApp.PomodoroApp.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CF1D35FD2A44392500EFA964 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -287,8 +465,10 @@
 		CF1D36002A44392500EFA964 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PomodoroApp/PomodoroApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SZN854MBPY;
@@ -315,8 +495,10 @@
 		CF1D36012A44392500EFA964 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PomodoroApp/PomodoroApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SZN854MBPY;
@@ -343,6 +525,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CF19CCB72A61FB9500D0A6CB /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF19CCB52A61FB9500D0A6CB /* Debug */,
+				CF19CCB62A61FB9500D0A6CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CF1D35E62A44392400EFA964 /* Build configuration list for PBXProject "PomodoroApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -362,6 +553,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF19CCB82A61FDE800D0A6CB /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF19CCB92A61FDE800D0A6CB /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19CCB82A61FDE800D0A6CB /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignal;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF1D35E32A44392400EFA964 /* Project object */;
 }
