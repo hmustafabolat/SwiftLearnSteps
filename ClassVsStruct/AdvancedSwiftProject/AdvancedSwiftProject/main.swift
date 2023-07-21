@@ -71,14 +71,14 @@ func convertToIntegerGuard(stringInput : String) -> Int{
     // Eğer dönüştürme başarılı olursa, myInteger'a atanır ve nil olmayan bir değeri elde ederiz.
     // Eğer dönüştürme başarısız olursa, yani stringInput, tamsayıya dönüştürülemez bir değer içeriyorsa, fonksiyon "return 0" ifadesiyle sonlanır ve 0 değeri döndürülür.
     
-    guard let myInteger = Int(stringInput) else {
+    
         guard let myInteger = Int(stringInput) else {return 0}
         
         // "guard let" ifadesi başarılı olduğu durumda buraya ulaşılır ve myInteger değeri nil olmayan bir tamsayı değerine sahiptir.
         
         return myInteger
     }
-    
+
     //If-let
     
     func convertToIntegerIf(stringInput : String) -> Int {
@@ -93,9 +93,23 @@ func convertToIntegerGuard(stringInput : String) -> Int{
         }
         
     }
-    print (convertToIntegerIf(stringInput: myNumber))
-    print (convertToIntegerGuard (stringInput: myNumber))
-
-
+    //print (convertToIntegerIf(stringInput: myNumber))
+    //print (convertToIntegerGuard (stringInput: myNumber))
+    
+    //Switch
+    
+    let myNum = 11
+    
+    let myRemainder = myNum % 3
+    
+    switch myRemainder {
+    case 1:
+        print("it's 1")
+    case 2:
+        print("it's 2")
+    case 3:
+        print("it's 3")
+    default:
+        print("none of the above")
     }
 
