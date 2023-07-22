@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct FourthView: View {
+    
+    @State var myName = "Musti"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(myName).font(.largeTitle).padding()
+            Button(action: {self.myName = "James"}){
+                Text("My Button")
+            }
+        }
     }
-}
-
-struct FourthView_Previews: PreviewProvider {
-    static var previews: some View {
-        FourthView()
+    
+    struct FourthView_Previews: PreviewProvider {
+        static var previews: some View {
+            FourthView()
+        }
     }
 }
