@@ -22,18 +22,18 @@ struct FavoritesElements : Identifiable{
 }
  
 //11
-let mhy = FavoritesElements(name: "MHY", imagaName: "mhy", description: "Mert Hakan Yandaş")
-let dzeko = FavoritesElements(name: "Dzeko", imagaName: "dzeko", description: "Edin Dzeko")
-let tadic = FavoritesElements(name: "Tadic", imagaName: "tadic", description: "Dusan Tadic")
+let mhy = FavoritesElements(name: "Mert Hakan Yandaş", imagaName: "mhy", description: "Orta Saha Oyuncusu")
+let dzeko = FavoritesElements(name: "Edin Dzeko", imagaName: "dzeko", description: "Forvet Oyuncusu")
+let tadic = FavoritesElements(name: "Dusan Tadic", imagaName: "tadic", description: "Kanat Oyuncusu")
 
 let favorites11Player = FavoriteModel(title: "Favorites 11 Player", elements: [mhy, dzeko, tadic])
 
 
 //Spare
-let arao = FavoritesElements(name: "Arao", imagaName: "arao", description: "Willian Arao")
-let osayi = FavoritesElements(name: "Osayi", imagaName: "osayi", description: "Osayi Samuel")
-let crespo = FavoritesElements(name: "Crespo", imagaName: "crespo", description: "Crespo")
+let arao = FavoritesElements(name: "Willian Arao", imagaName: "arao", description: "Defansif Orta Saha Oyuncusu")
+let crespo = FavoritesElements(name: "Miguel Crespo", imagaName: "crespo", description: "Defansif Orta Saha Oyuncusu")
+let osayi = FavoritesElements(name: "Bright Osayi Samuel", imagaName: "osayi", description: "Bek & Kanat Oyuncusu")
 
-let favoritesSparePlayer = FavoriteModel(title: "Favorites Spare Player", elements: [arao, osayi, crespo])
+let favoritesSparesPlayer = FavoriteModel(title: "Favorites Spare Player", elements: [arao, crespo, osayi])
 
-let myFavorites = [favorites11Player, favoritesSparePlayer]
+let myFavorites = [favorites11Player, favoritesSparesPlayer]
